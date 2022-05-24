@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÀI 1</title>
+    <!-- <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+    <script>
+    </script> -->
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <img src="image/gau.jpg" alt="" height="200" width="250">
+
+
+    </div> -->
+    <div class="container">
+        <div id="prev" onclick="onPrev()">Previous</div>
+        <div><img id="img" src="" alt="" width="300"></div>
+        <div id="next" onclick="onNext()">Next</div>
+    </div>
+
+    <script>
+        function query(string) {
+            return document.querySelector(string);
+        }
+
+        function queryAll(string) {
+            return document.querySelectorAll(string);
+        }
+    </script>
+
+    <script>
+        imageUrls = [
+            'https://jes.edu.vn/wp-content/uploads/2017/10/h%C3%ACnh-%E1%BA%A3nh.jpg',
+            'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80',
+            'https://www.w3schools.com/w3css/img_forest.jpg'
+        ];
+
+        var imageSrcIndex = 0;
+
+        var prevElement = query('#prev');
+        var nextElement = query('#next');
+        var imgElement = query('#img');
+
+        function setImageUrl(index) {
+            imgElement.src = imageUrls[index];
+        }
+        setImageUrl(imageSrcIndex);
+
+        function onPrev() {
+            if (imageSrcIndex === 0) {
+                imageSrcIndex = imageUrls.length - 1;
+            } else {
+                imageSrcIndex--;
+            }
+
+            return setImageUrl(imageSrcIndex);
+        }
+
+
+        function onNext() {
+            if (imageSrcIndex === imageUrls.length - 1) {
+                imageSrcIndex = 0;
+            } else {
+                imageSrcIndex++;
+            }
+
+            return setImageUrl(imageSrcIndex);
+        }
+    </script>
+</body>
+
+</html>

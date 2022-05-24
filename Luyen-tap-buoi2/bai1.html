@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <style>
+        .kq-bai-1 {
+            height: 30px;
+            width: 200px;
+            margin: 1px;
+            border: 2px solid gray;
+        }
+        
+        .kq-bai-2 {
+            height: 30px;
+            width: 200px;
+            margin: 1px;
+            border: 2px solid gray;
+        }
+        
+        .kq-bai-3 {
+            height: 50px;
+            width: 300px;
+            margin: 1px;
+            border: 2px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bài 1: Nhập dữ liệu vào ô input, hiển thị giá trị của ô input đó + nút Làm bài
+    Bài 2: Kiểm tra giá trị của ô input đã nhập trên bài 1 xem có chứa từ khoá 'abc' không? Nếu chưa nhập hiển thị Chưa nhập, nếu đã nhập hiển thị Có/Không
+    Bài 3: Nhập vào ô input các số cách nhau bởi dấu phẩy, hiển thị ra mảng gồm các số đó
+    Bài 4: Tìm số chẵn trong mảng các số vừa nhập ở bài 3 và hiển thị mảng gồm các số đó
+    
+    Yêu cầu về giao diện:
+    Các text "Bài x" sẽ có màu xanh da trời (xử lý bằng js), khi giải đúng sẽ đổi sang màu xanh lá cây
+    Mỗi bài sẽ có 1 nút Làm bài và bấm sẽ hiển thị kết quả -->
+
+    <!-- bài 1 -->
+    <div class="bai bai-1">
+        <div class="de-bai">
+            <span> Bài 1:</span> Nhập dữ liệu vào ô input, hiển thị giá trị của ô input đó
+            <input type="text" name="" id="input-bai-1">
+        </div>
+        <div class="lam-bai">
+            <button id="btn-bai-1" onclick="giaiBai1()">LÀM BÀI</button>
+        </div>
+        <div class="kq kq-bai-1"></div>
+    </div>
+
+    <!-- bài 2 -->
+    <div class="bai bai-2">
+        <div class="de-bai">
+            <span> Bài 2:</span> Kiểm tra giá trị của ô input đã nhập trên bài 1 xem có chứa từ khoá 'abc' không? Nếu chưa nhập hiển thị Chưa nhập, nếu đã nhập hiển thị Có/Không
+
+        </div>
+        <div class="lam-bai">
+            <button id="btn-bai-1" onclick="giaiBai2()">LÀM BÀI</button>
+        </div>
+        <div class="kq kq-bai-2"></div>
+        <div class="kq kq-bai-3"></div>
+    </div>
+
+    <!-- Hàm bài 1 -->
+    <script>
+        var spans = document.querySelectorAll('.de-bai span');
+        for (i = 0; i < spans.length; i++) {
+            spans[i].style.color = 'blue';
+        }
+        // console.log(spans);
+    </script>
+    <script>
+        function giaiBai1() {
+            var inputBai1 = document.querySelector('#input-bai-1');
+            var inputValue = inputBai1.value;
+            // kiểm tra input nếu ko có gtri thì đổi màu và thoát hàm giải bài 1
+            var spanBai1 = document.querySelector('.bai-1 .de-bai span');
+            if (!inputValue) { // tương đương với inputValue <=0
+                return spanBai1.style.color = 'red';
+            } else {
+                // nếu ko có gtri thì chạy hàm bên dưới
+                var kqBai1 = document.querySelector('.kq-bai-1');
+                kqBai1.innerHTML = inputValue;
+                // gán màu xanh
+                spanBai1.style.color = 'green';
+            }
+        }
+    </script>
+
+    <!-- hàm bài 2 -->
+    <script>
+        function giaiBai2() {
+            var inputBai1 = document.querySelector('#input-bai-1');
+            var inputValue = inputBai1.value;
+            var spanBai2 = document.querySelector('.bai-2 .de-bai span');
+            var kqBai2 = document.querySelector('.kq-bai-2');
+            if (!inputValue) {
+                spanBai2.style.color = 'red';
+                return kqBai2.innerHTML = 'chưa nhập';
+
+            }
+            if (!inputValue.includes('abc')) {
+                spanBai2.style.color = 'red';
+                return kqBai2.innerHTML = 'Không chứa abc';
+            }
+            spanBai2.style.color = 'green';
+            return kqBai2.innerHTML = 'Có chứa abc';
+        }
+    </script>
+
+    <!-- Bài 4 -->
+    <script>
+        var numberArray = [1, 2, 3, 4, 5, 11, 20];
+        var outputArray = [];
+        for (i = 0; i < numberArray.length; i++) {
+            if (numberArray[i] % 2 == 0) {
+                outputArray.push(numberArray[i]);
+            }
+        }
+        console.log(outputArray);
+
+        // map     
+        var output2 = numberArray.map(function(value, index) {
+            if (value % 2 == 0) {
+                return value;
+            }
+        });
+        console.log('output2', output2);
+
+        // filter
+        var output3 = numberArray.filter(function(value, index) {
+            if (value % 2 == 0) {
+                return value;
+            }
+        });
+        console.log('output3', output3);
+    </script>
+
+
+</body>
+
+</html>

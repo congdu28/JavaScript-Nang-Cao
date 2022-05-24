@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÀI 2</title>
+    <!-- <style>
+        .container {
+            margin: 0 auto;
+        }
+        
+        .logo {
+            /* text-align: center; */
+        }
+        
+        .box {
+            /* margin: 0 auto; */
+            padding: 5px;
+            width: 400px;
+            height: 400px;
+            border: 3px solid gray;
+            border-radius: 10px;
+        }
+        
+        .box input {
+            padding-left: 10px;
+        }
+        
+        .box h2 {
+            text-align: center;
+        }
+        
+        .box input {
+            height: 18px;
+            width: 200px;
+        }
+    </style> -->
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="logo">
+            <img src="image/gau.jpg" alt="" height="200" width="800">
+        </div>
+        <div class="box">
+            <h2>HÓA ĐƠN</h2>
+            <div class="user">
+                <label for="user">Khách hàng</label>
+                <input type="text">
+            </div>
+            <div class="class">
+                <label for="loai">Loại hàng:</label>
+                <select name="loai" id="loai">
+                    <option value="loai1">Loại 1</option>
+                    <option value="loai2">Loại 2</option>
+                    <option value="loai3">Loại 3</option>
+                </select>
+            </div>
+            <div class="price">
+                <label for="price">Đơn giá</label>
+                <input type="text">
+                <span></span>
+            </div>
+            <div class="quantity">
+                <label for="quantity">Số lượng</label>
+                <input type="text">
+                <span></span>
+            </div>
+            <div class="total">
+                <label for="total">Thành tiền</label>
+                <input type="text">
+                <span></span>
+            </div>
+            <div class="address">
+                <label for="address">Nơi nhận hàng</label>
+                <input name="address" type="radio" value="Nội thành" />Nội thành
+                <input name="address" type="radio" value="Ngoại thành" /> Ngoại thành
+                <span></span>
+            </div>
+            <div class="delivery">
+                <label for="total">Phí vận chuyển</label>
+                <input type="text">
+                <span></span>
+            </div>
+            <input type="button" value="Đặt mua">
+        </div>
+    </div>
+
+    <script>
+        function onValidate() {
+            var flag = false;
+            var inputs = queryAll('input');
+
+        }
+    </script> -->
+
+    <div class="container">
+        <h1>hoá đơn</h1>
+        <div>
+            <form action="">
+                <div>
+                    <label for="">Khach hang</label>
+                    <input type="text" id="ip_khach_hang">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="">Loai hang</label>
+                    <select name="" id="se_loai_hang" onchange="onChangeCate()">
+                        <option value="1" selected>Loai 1</option>
+                        <option value="2">Loai 2</option>
+                        <option value="3">Loai 3</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="">Don gia</label>
+                    <input type="text" id="ip_don_gia">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="">So luong</label>
+                    <input type="text" id="ip_so_luong">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="">Thanh tien</label>
+                    <input type="text" id="ip_thanh_tien">
+                    <span></span>
+                </div>
+                <div>
+                    <label for="">Noi nhan</label>
+                    <input type="radio" name="noi_nhan" value="1" onclick="onCheck(this)"> Noi thanh
+                    <input type="radio" name="noi_nhan" value="2" onclick="onCheck(this)"> Ngoai thanh
+                    <span></span>
+                </div>
+                <div>
+                    <label for="">Phi van chuyen</label>
+                    <input type="text" id="ip_phi">
+                    <span></span>
+                </div>
+                <button type="button" onclick="onBuy()">Dat mua</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function query(string) {
+            return document.querySelector(string);
+        }
+
+        function queryAll(string) {
+            return document.querySelectorAll(string);
+        }
+    </script>
+    <script>
+        var ipKhachHangElement = query('#ip_khach_hang');
+        var seLoaiHangElement = query('#se_loai_hang');
+        var ipDonGiaElement = query('#ip_don_gia');
+        var ipSoLuongElement = query('#ip_so_luong');
+        var ipThanhTienElement = query('#ip_thanh_tien');
+        // var ipNoiNhanElement = query('input[name="noi_nhan"]:checked');
+        var ipPhiElement = query('#ip_phi');
+
+        function onChangeCate() {
+            var loaiHang = +seLoaiHangElement.value;
+            switch (loaiHang) {
+                case 1:
+                    ipDonGiaElement.value = 500000;
+                    break;
+                case 2:
+                    ipDonGiaElement.value = 300000;
+                    break;
+                case 3:
+                    ipDonGiaElement.value = 100000;
+                    break;
+
+                default:
+                    ipDonGiaElement.value = 0;
+                    break;
+            }
+        }
+
+        onChangeCate();
+
+        var noiNhan = 0;
+
+        function onCheck(current) {
+            noiNhan = +current.value;
+            switch (noiNhan) {
+                case 1:
+                    ipPhiElement.value = 0;
+                    break;
+                case 2:
+                    ipPhiElement.value = 30000;
+                    break;
+                default:
+                    ipPhiElement.value = 0;
+                    break;
+            }
+        }
+
+        function onValidate() {
+            var flag = false;
+            var inputs = queryAll('input');
+            for (i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                var spanError = input.parentElement.querySelector('span');
+                console.log(spanError);
+                if (input.value) {
+                    spanError.innerHTML = '';
+                } else {
+                    spanError.innerHTML = 'Bat buoc nhap';
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+
+        function onBuy() {
+            if (onValidate()) {
+                return;
+            }
+
+            var thanhTien = ipDonGiaElement.value * ipSoLuongElement.value;
+            ipThanhTienElement.value = thanhTien;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi 3 - Object </title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="moment.min.js"></script>
+    <script>
+        // khai báo đối tượng
+        var sinhVien = {
+            id: 'PH13124',
+            name: 'Truong Ngoc',
+            ngayNhapHoc: '10/10/2021',
+            showInfor: function() {
+                // console.log('Họ tên: ', this.name); // Chỉ thực hiện log chứ ko trả về gtri
+                return ('Họ tên: ' + this.name);
+            },
+            updateInfor: function(newName) {
+                this.name = newName;
+            },
+            kiemTraTotNghiep: function() {
+                // Thời điêm hiện tại
+                var hientai = moment();
+                //từ ngày nhập học-> thời điển hiện tai là bn tháng?
+                var ngayNhapHocMoment = moment(this.ngayNhapHoc, 'dd.mm.yyyy');
+                var chenhLechThang = hientai.diff(ngayNhapHocMoment, 'months');
+                var soThangTotNghiep = 28;
+                // kiểm tra số 28 
+                // nếu >28 : đã tốt nghiệp
+                if (chenhLechThang > soThangTotNghiep) {
+                    return 'ĐÃ TỐT NGHIỆP';
+                }
+                // nếu >0 HOẶC < 28 đang học ,
+                if (chenhLechThang > 0 && chenhLechThang <= 28) {
+                    return 'ĐANG HỌC';
+                }
+                return 'CHƯA NHẬP HỌC';
+            }
+        }
+        sinhVien.id = 'PH1242467';
+        sinhVien.updateInfor('Le VAn A');
+
+        // console.log(sinhVien);
+        // console.log('Lấy ra ID Sinh viên: ', sinhVien.id);
+        // console.log('Lấy ra Tên Sinh viên: ', sinhVien.name);
+        // console.log('Thực hiện công việc showInfor: ', sinhVien.showInfor()); //trả về undefined nếu ko return
+
+        // YÊU CẦU TIẾP THEO
+        //1. Tính thời gian hiện tại
+        var now = moment();
+        // Nếu truyèn gtri thời gian kèm format thù sẽ trả về đối tượng moment
+        // cuả thời gian tương ứng
+        var nhaphoc = moment('10/10/2021', 'DD/MM/YYYY');
+        // Formatb thời gian qua biên now
+        console.log(now.diff(nhaphoc, 'days'));
+
+        // Tính thời gian ra trường
+    </script>
+
+
+</body>
+
+</html>
