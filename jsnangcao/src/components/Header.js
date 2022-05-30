@@ -7,6 +7,7 @@ const HeaderB = {
       <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
       <li class="nav-item"><a href="news" class="nav-link">News</a></li>
       <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="students" class="nav-link">Student</a></li>
     </ul>
   </header>`
 }

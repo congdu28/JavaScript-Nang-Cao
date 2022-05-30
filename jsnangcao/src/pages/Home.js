@@ -1,6 +1,6 @@
 const Home = {
     render: () => `<div class="">
-            <h5 style="color:red" class="d-flex justify-content-center py-3">CHÀO MỪNG BẠN ĐẾN VỚI TRANG CHỦ CỔNG THÔNG TIN ĐIỆN TỬ</h5> 
+           <marquee scrolldelay="0.5"> <h5 style="color:red" class="d-flex justify-content-center py-3">CHÀO MỪNG BẠN ĐẾN VỚI TRANG CHỦ CỔNG THÔNG TIN ĐIỆN TỬ</h5> </marquee>
      
      <h2 class="d-flex justify-content-center py-3"> Tiêm vaccine Covid-19 mũi 4 cho lực lượng tuyến đầu </h2>
      <p>Phó thủ tướng Vũ Đức Đam giao Bộ Y tế nghiên cứu tiêm vaccine mũi 4 cho lực lượng tuyến đầu đã suy giảm miễn dịch và đánh giá miễn dịch cộng đồng để có giải pháp phù hợp.

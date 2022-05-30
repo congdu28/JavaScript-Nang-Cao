@@ -12,9 +12,9 @@ const News = {
                             <div>
                             ${tin.content}
                             </div>`
-                    ))}
-
-                </div>`,
+                    )) .join('')
+                }
+                   </div>`,
 
 
     //             kiểu cũ
