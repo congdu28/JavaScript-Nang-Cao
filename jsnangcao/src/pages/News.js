@@ -1,33 +1,20 @@
-import tintuc from "../news-data";
-
-const News = {
+import news from "../new-data";
+import tintuc from "../new-data";
+const New = {
         render: () => `<div>
-                    ${tintuc.map((tin)=>(
-                            `<div>
-                            ${tin.id}
-                            </div>
-                            <div>
-                            ${tin.title}
-                            </div>
-                            <div>
-                            ${tin.content}
-                            </div>`
-                    )) .join('')
-                }
-                   </div>`,
-
-
-    //             kiểu cũ
-    // render: function() {
-    //     let string = '<div>';
-    //     for (let i = 0; i < tintuc.length; i++) {
-    //         string += '<div>';
-    //         string += tintuc[i].content;
-    //         string += '</div>';
-
-    //         string += '</div>'
-    //         return string;
-    //     }
-    // }
+        ${tintuc.map((tin)=>(
+        `<div>
+        ${tin.id},
+        </div>
+        <div>
+        ${tin.title},
+        </div>
+        <div>
+        ${tin.content}
+        </div>`
+    )).join('')
+    }
+        </div>`  ,
 }
-export default News;
+
+export default news;

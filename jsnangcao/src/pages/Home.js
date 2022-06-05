@@ -1,6 +1,7 @@
 const Home = {
-    render: () => `<div class="">
-           <marquee scrolldelay="0.5"> <h5 style="color:red" class="d-flex justify-content-center py-3">CHÀO MỪNG BẠN ĐẾN VỚI TRANG CHỦ CỔNG THÔNG TIN ĐIỆN TỬ</h5> </marquee>
+    render: () => 
+    `<div class="">
+           <marquee scrolldelay="1"> <h5 style="color:red" class="d-flex justify-content-center py-3">CHÀO MỪNG BẠN ĐẾN VỚI TRANG CHỦ CỔNG THÔNG TIN ĐIỆN TỬ</h5> </marquee>
      
      <h2 class="d-flex justify-content-center py-3"> Tiêm vaccine Covid-19 mũi 4 cho lực lượng tuyến đầu </h2>
      <p>Phó thủ tướng Vũ Đức Đam giao Bộ Y tế nghiên cứu tiêm vaccine mũi 4 cho lực lượng tuyến đầu đã suy giảm miễn dịch và đánh giá miễn dịch cộng đồng để có giải pháp phù hợp.
@@ -11,5 +12,6 @@ const Home = {
 
      Tại phiên họp Chính phủ thường kỳ ngày 4/4, Thủ tướng Phạm Minh Chính đánh giá, dù rất nỗ lực nhưng tiến độ tiêm vaccine mũi ba chưa đạt mong muốn; việc tiêm cho trẻ từ 5 đến 11 tuổi "cần cố gắng hơn".</p>
      </div>`
+    
 }
 export default Home;
