@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Khởi tạo cấu hình axios cho toàn bộ project
 const apiAxios = axios.create({
-    baseURL: 'https://6291d460cd0c91932b68a2f1.mockapi.io'
+    baseURL: 'https://6291d18dcd0c91932b6876da.mockapi.io'
 });
 
 export default apiAxios;

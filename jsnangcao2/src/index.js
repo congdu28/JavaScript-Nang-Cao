@@ -8,9 +8,6 @@ import News from './pages/News';
 import Student from './pages/Student';
 import StudentDetail from './pages/StudentDetail';
 import StudentAdd from './pages/StudentAdd';
-import Product from './pages/Product';
-import ProductAdd from './pages/ProductAdd';
-import ProductDetail from './pages/ProductDetail';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // router.navigate('/students');
 import router from './helpers/router';
 
-const render = async(content, id) => {
+const render = async (content, id) => {
     // content sẽ là toàn bộ component
     // cần thêm tham số vào hàm này để truyền id cho những phần detail
     document.querySelector('#header').innerHTML = Header.render();
@@ -40,9 +37,6 @@ router.on({
     '/students/:id': (data) => render(StudentDetail, data.data.id),
     '/students/add': () => render(StudentAdd),
     '/students/edit/:id': (data) => render(StudentAdd, data.data.id),
-    '/products': () => render(Product),
-    '/products/add': () => render(ProductAdd),
-    '/products/detail/:id': (data) => render(ProductDetail, data.data.id),
 });
 router.resolve();
 
@@ -163,7 +157,7 @@ let a = [];
 // -- await phải nằm trong 1 hàm async thì mới dùng được
 // -- await phải là 1 hàm trả về đối tượng Promise
 
-const printA = async() => {
+const printA = async () => {
     // gọi hàm setValueA để chờ nhận kết quả [1, 2, 3]
     const result = await setValueA(); // giá trị được truyền vào trong resolve()
     // chờ setValueA thực thi xong và trả về kq [1,2,3];

@@ -1,17 +1,11 @@
 import tintuc from '../news-data';
 
 const News = {
-        render: () =>
-            `<div>
+    render: () =>
+    `<div>
         ${tintuc.map((tin) => (
             `<div>
-            ${tin.id}
-            </div>
-            <div>
-            ${tin.title}
-            </div>
-            <div>
-            ${tin.content}
+                ${tin.content}
             </div>`
         )).join('')
     }</div>`,

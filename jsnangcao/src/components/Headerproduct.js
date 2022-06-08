@@ -1,4 +1,4 @@
-import Nav from './navproduct';
+import Nav from './Navproduct';
 
 const HeaderB = {
     render: () =>
@@ -7,7 +7,7 @@ const HeaderB = {
       <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
       <li class="nav-item"><a href="/news" class="nav-link">News</a></li>
       <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-      <li class="nav-item"><a href="/products" class="nav-link">Product</a></li>
+      <li class="nav-item"><a href="/products" class="nav-link">product</a></li>
     </ul>
   </header>`
 }
